@@ -1,4 +1,4 @@
-package com.dw.wechatmessage.config;
+package com.dw.wechatmessage.v1.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.dw.wechatmessage.dto;
+package com.dw.wechatmessage.v1.dto;
 
 /**
  * 公交到站信息回执

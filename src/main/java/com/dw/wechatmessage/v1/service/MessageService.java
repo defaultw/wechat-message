@@ -1,6 +1,6 @@
-package com.dw.wechatmessage.service;
+package com.dw.wechatmessage.v1.service;
 
-import com.dw.wechatmessage.dto.WechatJsonMessageDTO;
+import com.dw.wechatmessage.v1.dto.WechatJsonMessageDTO;
 
 /**
  * 消息相关操作服务

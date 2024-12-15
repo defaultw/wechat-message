@@ -1,5 +1,7 @@
 package com.dw.wechatmessage.service;
 
+import com.dw.wechatmessage.v1.service.AuthService;
+import com.dw.wechatmessage.v1.service.BusInfoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

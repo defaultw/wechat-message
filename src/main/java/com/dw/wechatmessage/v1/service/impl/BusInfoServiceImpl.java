@@ -1,13 +1,13 @@
-package com.dw.wechatmessage.service.impl;
+package com.dw.wechatmessage.v1.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.dw.wechatmessage.config.AppBusInfoConfig;
-import com.dw.wechatmessage.config.BusInfoConfig;
-import com.dw.wechatmessage.dto.AppBusInfoDTO;
-import com.dw.wechatmessage.dto.BusInfoDTO;
-import com.dw.wechatmessage.service.BusInfoService;
+import com.dw.wechatmessage.v1.config.AppBusInfoConfig;
+import com.dw.wechatmessage.v1.config.BusInfoConfig;
+import com.dw.wechatmessage.v1.dto.AppBusInfoDTO;
+import com.dw.wechatmessage.v1.dto.BusInfoDTO;
+import com.dw.wechatmessage.v1.service.BusInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;

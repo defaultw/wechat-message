@@ -1,7 +1,7 @@
-package com.dw.wechatmessage.service;
+package com.dw.wechatmessage.v1.service;
 
-import com.dw.wechatmessage.dto.AppBusInfoDTO;
-import com.dw.wechatmessage.dto.BusInfoDTO;
+import com.dw.wechatmessage.v1.dto.AppBusInfoDTO;
+import com.dw.wechatmessage.v1.dto.BusInfoDTO;
 
 /**
  * 查询公交车相关信息服务

@@ -1,10 +1,10 @@
-package com.dw.wechatmessage.service.impl;
+package com.dw.wechatmessage.v1.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dw.wechatmessage.config.MessageConfig;
-import com.dw.wechatmessage.dto.WechatJsonMessageDTO;
-import com.dw.wechatmessage.service.AuthService;
-import com.dw.wechatmessage.service.MessageService;
+import com.dw.wechatmessage.v1.config.MessageConfig;
+import com.dw.wechatmessage.v1.dto.WechatJsonMessageDTO;
+import com.dw.wechatmessage.v1.service.AuthService;
+import com.dw.wechatmessage.v1.service.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

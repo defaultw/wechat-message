@@ -1,6 +1,6 @@
-package com.dw.wechatmessage.service;
+package com.dw.wechatmessage.v1.service;
 
-import com.dw.wechatmessage.dto.AccessTokenDTO;
+import com.dw.wechatmessage.v1.dto.AccessTokenDTO;
 
 /**
  * 授权相关接口

@@ -7,8 +7,8 @@ logging:
 
 # 微信测试号配置
 wechat:
-  appId: wxfb2aa99539e1dc42
-  secret: 122b1b5688614c824858affb635afe79
+  appId: wxf2a8e0bbcc0e5fbb
+  secret: 31f6b91e51633b534c41ee3c28d319fb
   accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s
 
 # 消息配置

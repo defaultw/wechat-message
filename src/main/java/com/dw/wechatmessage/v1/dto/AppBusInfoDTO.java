@@ -1,4 +1,4 @@
-package com.dw.wechatmessage.dto;
+package com.dw.wechatmessage.v1.dto;
 
 import java.util.List;
 
