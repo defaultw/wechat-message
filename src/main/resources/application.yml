@@ -1,0 +1,38 @@
+server:
+  port: 1001
+
+logging:
+  level:
+    com.dw.wechatmessage: debug
+
+# 微信测试号配置
+wechat:
+  appId: wxfb2aa99539e1dc42
+  secret: 122b1b5688614c824858affb635afe79
+  accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s
+
+# 消息配置
+message:
+  sendMessageUrl: https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s
+
+# 公交信息模板配置
+bus:
+  message:
+    template:
+      templateId: 40vZI1TNUVHTi-P0jlfd-6V4iu6v2_IIi471u1rvU8A
+      toUser: osGx76Py4tScW81nTfA-jdR295Go
+      cron: "0/20 36-42 6 * * 1-5"
+      requestUrl: https://shfb.ibbtv.cn/public/bus/Getstop
+      busId: d0d9c7f6d178c00e5ad72c9355bcbc0b
+      stopId: "8."
+      stopType: 1
+
+# APP端接口版本公交信息模板配置
+app:
+  message:
+    template:
+      templateId: 40vZI1TNUVHTi-P0jlfd-6V4iu6v2_IIi471u1rvU8A
+      toUser: osGx76Py4tScW81nTfA-jdR295Go
+      cron: "0/10 * * * * ?"
+      requestUrl: http://apps.eshimin.com/traffic/gjc/getArriveBase?name=1009路&lineid=60019&stopid=103922&direction=1
+
