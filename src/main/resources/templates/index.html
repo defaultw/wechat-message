@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Bootstrap Card Example</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .card-margin {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<!-- 页面内容将放置在这里 -->
+<div class="custom-container">
+    <div class="card card-margin" th:each="data : ${results}">
+        <div class="card-header">
+            <span th:text="${data.dispatchCarSchedule.lineName}"></span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <label class="col-4 text-start">到站时间：</label>
+                <div class="col-8 text-start">
+                    <span th:text="${data.stopArriveInfo.currentBusArriveTime}"></span>分钟
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-4 text-start">到站距离：</label>
+                <div class="col-8 text-start">
+                    <span th:text="${data.stopArriveInfo.currentBusDistance}"></span>米
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-4 text-start">发车时间：</label>
+                <div class="col-8 text-start">
+                    <span th:text="${data.dispatchCarSchedule.scheduleMsg}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 引入Bootstrap JS和依赖的Popper.js及jQuery（若使用Bootstrap 4） -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

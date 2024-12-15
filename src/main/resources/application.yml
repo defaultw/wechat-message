@@ -11,28 +11,30 @@ wechat:
   secret: 31f6b91e51633b534c41ee3c28d319fb
   accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s
 
-# 消息配置
-message:
-  sendMessageUrl: https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s
-
-# 公交信息模板配置
 bus:
-  message:
-    template:
-      templateId: 40vZI1TNUVHTi-P0jlfd-6V4iu6v2_IIi471u1rvU8A
-      toUser: osGx76Py4tScW81nTfA-jdR295Go
-      cron: "0/20 36-42 6 * * 1-5"
-      requestUrl: https://shfb.ibbtv.cn/public/bus/Getstop
-      busId: d0d9c7f6d178c00e5ad72c9355bcbc0b
-      stopId: "8."
-      stopType: 1
-
-# APP端接口版本公交信息模板配置
-app:
-  message:
-    template:
-      templateId: 40vZI1TNUVHTi-P0jlfd-6V4iu6v2_IIi471u1rvU8A
-      toUser: osGx76Py4tScW81nTfA-jdR295Go
-      cron: "0/10 * * * * ?"
-      requestUrl: http://apps.eshimin.com/traffic/gjc/getArriveBase?name=1009路&lineid=60019&stopid=103922&direction=1
-
+  interface:
+    url: https://api.shmaas.net/traffic/v1/getbusstoparrivedetails
+    cityCode: 310100
+  query:
+    work:
+      - lineId: 1256
+        lineName: 莲亭专线
+        stopId: 21
+        metroType: 0
+        language: zh-cn
+        stopName: 新车公路书林路
+        direction: 1
+      - lineId: 1002
+        lineName: 莲金专线
+        stopId: 37
+        metroType: 0
+        language: zh-cn
+        stopName: 车新公路书林路(招呼站)
+        direction: 1
+      - lineId: 510700
+        lineName: 上石线
+        stopId: 55
+        metroType: 0
+        language: zh-cn
+        stopName: 新车公路书林路
+        direction: 0
