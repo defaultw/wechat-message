@@ -1,6 +1,6 @@
 package com.dw.wechatmessage.v2.bus.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSON;
 import com.dw.wechatmessage.v2.bus.config.BusQueryDataConfig;
 import com.dw.wechatmessage.v2.bus.dto.BusStopArriveQueryDTO;
 import com.dw.wechatmessage.v2.bus.dto.BusStopArriveResultDTO;
@@ -27,7 +27,7 @@ import java.util.Objects;
 @Controller
 public class BusInfoController {
 
-    private final static Logger logger = LoggerFactory.getLogger(BusInfoController.class);
+    private static final Logger logger = LoggerFactory.getLogger(BusInfoController.class);
 
     @Resource
     private IBusInfoService busInfoService;
@@ -48,7 +48,8 @@ public class BusInfoController {
             }
         }
         model.addAttribute("results", results);
-        logger.info(JSONObject.toJSONString(results));
+        model.addAttribute("message", work ? "公交到站(上班)" : "公交到站(下班)");
+        logger.info(JSON.toJSONString(results));
         return "index";
     }
 

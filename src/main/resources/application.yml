@@ -38,3 +38,25 @@ bus:
         language: zh-cn
         stopName: 新车公路书林路
         direction: 0
+    offWork:
+      - lineId: 1256
+        lineName: 莲亭专线
+        stopId: 2
+        metroType: 0
+        language: zh-cn
+        stopName: 莲花路地铁站(南方商城)
+        direction: 0
+      - lineId: 1002
+        lineName: 莲金专线
+        stopId: 2
+        metroType: 0
+        language: zh-cn
+        stopName: 莲花路地铁站(南方商城)
+        direction: 0
+      - lineId: 510700
+        lineName: 上石线
+        stopId: 3
+        metroType: 0
+        language: zh-cn
+        stopName: 莲花路地铁站
+        direction: 1

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>公交到站</title>
+    <title th:text="${message}">>公交到站</title>
     <!-- 引入Bootstrap CSS -->
     <link href="/css/styles.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
             <div class="row">
                 <label class="col-4 text-start">到站距离：</label>
                 <div class="col-8 text-start">
-                    <span th:text="${data.stopArriveInfo.currentBusDistance == null ? '-' : data.stopArriveInfo.currentBusDistance}"></span>&nbsp;米
+                    <span th:text="${data.stopArriveInfo.currentBusDistance == null ? '-' : data.stopArriveInfo.currentBusDistance}"></span>
                 </div>
             </div>
             <div class="row">

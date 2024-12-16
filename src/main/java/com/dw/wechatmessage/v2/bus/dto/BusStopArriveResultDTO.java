@@ -1,5 +1,10 @@
 package com.dw.wechatmessage.v2.bus.dto;
 
+import org.thymeleaf.util.StringUtils;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * 公交到站详细信息
  *
@@ -25,7 +30,17 @@ public class BusStopArriveResultDTO {
         private String currentLicensePlate;
 
         public String getCurrentBusDistance() {
-            return currentBusDistance;
+            if (StringUtils.isEmpty(currentBusDistance)) {
+                return " 米";
+            }
+            // 原始数据单位为米，此处直接转换为公里
+            BigDecimal distance = new BigDecimal(currentBusDistance);
+            if (distance.compareTo(new BigDecimal(1000)) < 0) {
+                return String.format("%s 米", currentBusDistance);
+            } else {
+                BigDecimal res = distance.divide(new BigDecimal("1000.000"), 3, RoundingMode.FLOOR);
+                return String.format("%s 公里", res.toPlainString());
+            }
         }
 
         public void setCurrentBusDistance(String currentBusDistance) {
