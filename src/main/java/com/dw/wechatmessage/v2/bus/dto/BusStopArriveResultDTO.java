@@ -29,18 +29,19 @@ public class BusStopArriveResultDTO {
 
         private String currentLicensePlate;
 
+        /**
+         * 剩余站数
+         */
+        private Integer currentBusStopCount;
+
+        private String nextBusArriveTime;
+
+        private String nextBusStopCount;
+
+        private String nextBusDistance;
+
         public String getCurrentBusDistance() {
-            if (StringUtils.isEmpty(currentBusDistance)) {
-                return " 米";
-            }
-            // 原始数据单位为米，此处直接转换为公里
-            BigDecimal distance = new BigDecimal(currentBusDistance);
-            if (distance.compareTo(new BigDecimal(1000)) < 0) {
-                return String.format("%s 米", currentBusDistance);
-            } else {
-                BigDecimal res = distance.divide(new BigDecimal("1000.000"), 3, RoundingMode.FLOOR);
-                return String.format("%s 公里", res.toPlainString());
-            }
+            return getDistance(currentBusDistance);
         }
 
         public void setCurrentBusDistance(String currentBusDistance) {
@@ -71,6 +72,58 @@ public class BusStopArriveResultDTO {
             this.currentLicensePlate = currentLicensePlate;
         }
 
+        public Integer getCurrentBusStopCount() {
+            return currentBusStopCount;
+        }
+
+        public void setCurrentBusStopCount(Integer currentBusStopCount) {
+            this.currentBusStopCount = currentBusStopCount;
+        }
+
+        public String getNextBusArriveTime() {
+            return nextBusArriveTime;
+        }
+
+        public void setNextBusArriveTime(String nextBusArriveTime) {
+            this.nextBusArriveTime = nextBusArriveTime;
+        }
+
+        public String getNextBusStopCount() {
+            return nextBusStopCount;
+        }
+
+        public void setNextBusStopCount(String nextBusStopCount) {
+            this.nextBusStopCount = nextBusStopCount;
+        }
+
+        public String getNextBusDistance() {
+            return getDistance(nextBusDistance);
+        }
+
+        public void setNextBusDistance(String nextBusDistance) {
+            this.nextBusDistance = nextBusDistance;
+        }
+
+        /**
+         * 获取格式化后的距离
+         *
+         * @param currentBusDistance 距离字符串，单位米
+         * @return 格式化后字符串
+         */
+        private String getDistance(String currentBusDistance) {
+            if (StringUtils.isEmpty(currentBusDistance)) {
+                return "- 米";
+            }
+            // 原始数据单位为米，此处直接转换为公里
+            BigDecimal distance = new BigDecimal(currentBusDistance);
+            if (distance.compareTo(new BigDecimal(1000)) < 0) {
+                return String.format("%s 米", currentBusDistance);
+            } else {
+                BigDecimal res = distance.divide(new BigDecimal("1000.000"), 3, RoundingMode.FLOOR);
+                return String.format("%s 公里", res.toPlainString());
+            }
+        }
+
         @Override
         public String toString() {
             return "StopArriveInfo{" +
@@ -78,6 +131,10 @@ public class BusStopArriveResultDTO {
                     ", currentBusArriveTime='" + currentBusArriveTime + '\'' +
                     ", stopName='" + stopName + '\'' +
                     ", currentLicensePlate='" + currentLicensePlate + '\'' +
+                    ", currentBusStopCount=" + currentBusStopCount +
+                    ", nextBusArriveTime='" + nextBusArriveTime + '\'' +
+                    ", nextBusStopCount='" + nextBusStopCount + '\'' +
+                    ", nextBusDistance='" + nextBusDistance + '\'' +
                     '}';
         }
     }
