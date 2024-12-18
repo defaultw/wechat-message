@@ -14,6 +14,7 @@
 
         .button-style {
             padding: 10px 0;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -21,6 +22,7 @@
 <!-- 页面内容将放置在这里 -->
 <div class="custom-container">
     <div class="button-style">
+        <button id="refreshButton" type="button" class="btn btn-success">刷新</button>
         <button
                 type="button"
                 class="btn btn-outline-primary"
@@ -56,6 +58,9 @@
                 </div>
             </div>
             <div class="collapse" id="collapseExample">
+                <div class="text-success botom-padding">
+                    <hr/>
+                </div>
                 <div class="row">
                     <label class="col-4 text-start">次班时间：</label>
                     <div class="col-8 text-start">
@@ -74,6 +79,9 @@
                         <span th:text="${data.stopArriveInfo.nextBusStopCount == null ? '-' : data.stopArriveInfo.nextBusStopCount}"></span>&nbsp;站
                     </div>
                 </div>
+                <div class="text-success botom-padding">
+                    <hr/>
+                </div>
                 <div class="row">
                     <label class="col-4 text-start">发车时间：</label>
                     <div class="col-8 text-start">
@@ -84,6 +92,14 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // 确保DOM完全加载后执行
+        document.getElementById('refreshButton').addEventListener('click', function () {
+            window.location.reload();
+        });
+    });
+</script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

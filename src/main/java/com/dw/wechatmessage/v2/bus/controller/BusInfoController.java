@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +37,9 @@ public class BusInfoController {
     private BusQueryDataConfig busQueryDataConfig;
 
     @GetMapping("/index")
-    public String index(Model model, @RequestParam("work") boolean work) {
+    public String index(HttpServletRequest request, Model model, @RequestParam("work") boolean work) {
+        logger.info("当前访问X-Forwarded-For: {}; X-Real-IP: {}",
+                request.getAttribute("X-Forwarded-For"), request.getAttribute("X-Real-IP"));
         List<BusStopArriveResultDTO> results = new ArrayList<>();
         List<BusStopArriveQueryDTO> busList = work ? busQueryDataConfig.getWork() : busQueryDataConfig.getOffWork();
         if (!CollectionUtils.isEmpty(busList)) {
