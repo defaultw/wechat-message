@@ -5,6 +5,7 @@ import com.dw.wechatmessage.v2.bus.config.BusQueryDataConfig;
 import com.dw.wechatmessage.v2.bus.dto.BusStopArriveQueryDTO;
 import com.dw.wechatmessage.v2.bus.dto.BusStopArriveResultDTO;
 import com.dw.wechatmessage.v2.bus.service.IBusInfoService;
+import com.dw.wechatmessage.v2.bus.utils.Ip2LocalUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -38,8 +39,9 @@ public class BusInfoController {
 
     @GetMapping("/index")
     public String index(HttpServletRequest request, Model model, @RequestParam("work") boolean work) {
+        String realIp = request.getHeader("X-Real-IP");
         logger.info("当前访问X-Forwarded-For: {}; X-Real-IP: {}",
-                request.getHeader("X-Forwarded-For"), request.getHeader("X-Real-IP"));
+                request.getHeader("X-Forwarded-For"), realIp);
         List<BusStopArriveResultDTO> results = new ArrayList<>();
         List<BusStopArriveQueryDTO> busList = work ? busQueryDataConfig.getWork() : busQueryDataConfig.getOffWork();
         if (!CollectionUtils.isEmpty(busList)) {
@@ -49,6 +51,13 @@ public class BusInfoController {
                     results.add(data);
                 }
             }
+        }
+        model.addAttribute("realIp", realIp);
+        try {
+            String localByIpv4 = Ip2LocalUtil.getLocalByIpv4(realIp);
+            model.addAttribute("realIp2Local", localByIpv4);
+        } catch (Exception e) {
+            logger.error("获取IP对应地址失败", e);
         }
         model.addAttribute("results", results);
         model.addAttribute("message", work ? "公交到站(上班)" : "公交到站(下班)");

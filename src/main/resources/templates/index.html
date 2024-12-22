@@ -15,6 +15,16 @@
         .button-style {
             padding: 10px 0;
             margin-right: 10px;
+            display: flex;
+            justify-content: end;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .ip-style {
+            padding: 10px 0;
+            display: flex;
+            justify-content: end;
         }
     </style>
 </head>
@@ -22,7 +32,6 @@
 <!-- 页面内容将放置在这里 -->
 <div class="custom-container">
     <div class="button-style">
-        <button id="refreshButton" type="button" class="btn btn-success">刷新</button>
         <button
                 type="button"
                 class="btn btn-outline-primary"
@@ -33,6 +42,7 @@
         >
             更多信息
         </button>
+        <button id="refreshButton" type="button" class="btn btn-success">刷新</button>
     </div>
     <div class="card card-margin" th:each="data : ${results}">
         <div class="card-header">
@@ -88,6 +98,17 @@
                         <span th:text="${data.dispatchCarSchedule.scheduleMsg}"></span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="ip-style">
+        <div class="toast align-items-center fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    IP: <span th:text="${realIp}"></span>&nbsp;&nbsp;&nbsp;&nbsp;位置: <span
+                        th:text="${realIp2Local}"></span>
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>

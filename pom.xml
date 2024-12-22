@@ -55,6 +55,11 @@
             <artifactId>fastjson</artifactId>
             <version>2.0.12</version>
         </dependency>
+        <dependency>
+            <groupId>net.cz88</groupId>
+            <artifactId>czdb-search</artifactId>
+            <version>1.0.2.5</version>
+        </dependency>
     </dependencies>
 
     <build>
