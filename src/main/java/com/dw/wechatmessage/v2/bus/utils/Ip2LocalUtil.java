@@ -14,7 +14,7 @@ public class Ip2LocalUtil {
     private static final String DEV_FILE_PATH_V4 = "D:\\document\\dev_file\\cz88\\cz88_public_v4.czdb";
     private static final String DEV_FILE_PATH_V6 = "D:\\document\\dev_file\\cz88\\cz88_public_v6.czdb";
 
-    private static final String PRO_FILE_PATH_V4 = "/opt/wechatMessage/ip2local/wechatcz88_public_v4.czdb";
+    private static final String PRO_FILE_PATH_V4 = "/opt/wechatMessage/ip2local/cz88_public_v4.czdb";
     private static final String PRO_FILE_PATH_V6 = "/opt/wechatMessage/ip2local/cz88_public_v6.czdb";
 
     private static final String KEY = "yx1QdhtX14tGil/cJNGYDA==";
@@ -29,6 +29,5 @@ public class Ip2LocalUtil {
         }
         return dbSearcher.search(ip);
     }
-
 
 }
