@@ -39,7 +39,7 @@ public class BusInfoController {
 
     @GetMapping("/index")
     public String index(HttpServletRequest request, Model model, @RequestParam("work") boolean work) {
-        String realIp = request.getHeader("X-Real-IP");
+        String realIp = request.getHeader("X-Forwarded-For");
         logger.info("当前访问X-Forwarded-For: {}; X-Real-IP: {}",
                 request.getHeader("X-Forwarded-For"), realIp);
         List<BusStopArriveResultDTO> results = new ArrayList<>();
