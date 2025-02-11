@@ -40,7 +40,7 @@ public class BusInfoController {
     @GetMapping("/index")
     public String index(HttpServletRequest request, Model model, @RequestParam("work") boolean work) {
         String realIp = request.getHeader("X-Forwarded-For");
-        logger.info("当前访问X-Forwarded-For: {}; X-Real-IP: {}",
+        logger.info("当前访问X-Forwarded-For: {}; X-Forwarded-For: {}",
                 request.getHeader("X-Forwarded-For"), realIp);
         List<BusStopArriveResultDTO> results = new ArrayList<>();
         List<BusStopArriveQueryDTO> busList = work ? busQueryDataConfig.getWork() : busQueryDataConfig.getOffWork();
