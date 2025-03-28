@@ -17,6 +17,7 @@ bus:
     url: https://api.shmaas.net/traffic/v1/getbusstoparrivedetails
     cityCode: 310100
   query:
+    # 上班
     work:
       - lineId: 1256
         lineName: 莲亭专线
