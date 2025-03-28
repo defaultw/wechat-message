@@ -26,10 +26,10 @@ bus:
         direction: 1
       - lineId: 1002
         lineName: 莲金专线
-        stopId: 37
+        stopId: 38
         metroType: 0
         language: zh-cn
-        stopName: 车新公路书林路(招呼站)
+        stopName: 新车公路书林路
         direction: 1
       - lineId: 510700
         lineName: 上石线
