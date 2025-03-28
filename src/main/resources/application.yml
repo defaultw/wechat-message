@@ -11,6 +11,7 @@ wechat:
   secret: 31f6b91e51633b534c41ee3c28d319fb
   accessTokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s
 
+# 公交站配置
 bus:
   interface:
     url: https://api.shmaas.net/traffic/v1/getbusstoparrivedetails
